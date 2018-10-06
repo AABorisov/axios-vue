@@ -7,9 +7,11 @@
         <div id="app">
             <div v-if="seen">
                 <ol>
-                    <li v-for="todo in todos">
-                        {{ todo.text }}
-                    </li>
+                    <todo-item
+                            v-for="(item, index) in todos"
+                            v-bind:todo="item"
+                            v-bind:key="index">
+                    </todo-item>
                 </ol>
             </div>
             <div>
